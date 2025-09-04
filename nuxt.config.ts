@@ -3,7 +3,12 @@ import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2025-05-15',
-	modules: ['@nuxt/ui', '@pinia/nuxt'],
+	modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxtjs/color-mode'],
+	colorMode: {
+		preference: 'dark', // domyślnie dark
+		fallback: 'dark', // gdy brak wsparcia systemowego
+		classSuffix: '', // używa klasy 'dark' (Tailwind)
+	},
 	css: ['~/assets/css/main.css'],
 	devtools: { enabled: true },
 	runtimeConfig: {
